@@ -238,5 +238,13 @@ game.onUpdateInterval(randint(250, 1000), function () {
     rightCar.x = -20
 })
 forever(function () {
+    if (controller.A.isPressed() && controller.B.isPressed()) {
+        crossingTime = 10000
+        info.setLife(10000)
+        leftCar.destroy(effects.warmRadial, 2000)
+        rightCar.destroy(effects.coolRadial, 2000)
+    }
+})
+forever(function () {
     music.playMelody("C A B C5 A F E C ", 120)
 })
